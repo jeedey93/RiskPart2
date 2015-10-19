@@ -8,11 +8,10 @@
 
 using namespace std;
 
-void main()
-{
+Map readMap(string mapName){
 	string line;
 	ifstream myfile;
-	myfile.open ("World.map", ios::out | ios::app | ios::binary); 
+	myfile.open(mapName, ios::out | ios::app | ios::binary);
 	if (myfile.is_open())
 	{
 		Map map;
@@ -22,117 +21,176 @@ void main()
 		string scroll;
 		bool warn;
 
-		while (getline (myfile,line) )
+		while (getline(myfile, line))
 		{
-			if(line == "[Map]\r"){
-				while(line != "\r")
+			if (line == "[Map]\r"){
+				while (line != "\r")
 				{
-					getline (myfile,line);
+					getline(myfile, line);
 					string delimiter = "=";
 					string attribute = line.substr(0, line.find(delimiter));
-					string value = line.substr(line.find(delimiter)+1);
+					string value = line.substr(line.find(delimiter) + 1);
 					string delimiter2 = "\r";
 					string value2 = value.substr(0, value.find(delimiter2));
 
-					if(attribute=="author"){
+					if (attribute == "author"){
 						author = value2;
 					}
-					if(attribute=="image"){
+					if (attribute == "image"){
 						image = value2;
 					}
-					if(attribute=="wrap" ){
-						wrap = value2 == "yes"? true : false;
+					if (attribute == "wrap"){
+						wrap = value2 == "yes" ? true : false;
 					}
-					if(attribute=="scroll"){
+					if (attribute == "scroll"){
 						scroll = value2;
 					}
-					if(attribute=="warn"){
-						warn = value2 == "yes"? true: false;
+					if (attribute == "warn"){
+						warn = value2 == "yes" ? true : false;
 					}
 				}
-				map = Map(author,image,wrap,scroll,warn); 
-				cout << map.getAuthor() << endl;
-				cout << map.getImage() << endl;
-				cout << map.getWrap() << endl;
-				cout << map.getScroll() << endl;
-				cout << map.getWarn() << endl;
+				map = Map(author, image, wrap, scroll, warn);
 			}
 
-			if(line == "[Continents]\r"){
-				while(line != "\r")
+			if (line == "[Continents]\r"){
+				while (line != "\r")
 				{
-					getline (myfile,line);
+					getline(myfile, line);
 					string delimiter = "=";
 					string continentName = line.substr(0, line.find(delimiter));
-					string value = line.substr(line.find(delimiter)+1);
+					string value = line.substr(line.find(delimiter) + 1);
 					string delimiter2 = "\r";
 					string units = value.substr(0, value.find(delimiter2));
 
-					if(units!=""){
+					if (units != ""){
 						Continent continent = Continent(continentName, atoi(units.c_str()));
 						map.Continents.push_back(continent);
 					}
 				}
 			}
 
-			if(line == "[Territories]\r"){
-				while(line != "\r")
+			if (line == "[Territories]\r"){
+				while (getline(myfile, line))
 				{
 					string name;
 					double latitude;
 					double longitude;
 					string continent;
-					getline (myfile,line);
+					if (line != "\r"){
+						string::size_type equal = line.find(',');
+						name = line.substr(0, equal);
+						line = line.substr(equal + 1, line.length());
 
-					string::size_type equal = line.find(',');
-					name = line.substr(0,equal);
-					cout << name << endl;
-					line = line.substr(equal +1 , line.length());
+						equal = line.find(',');
+						string latitudeString = line.substr(0, equal);
+						std::string::size_type sz;
+						latitude = std::stod(latitudeString, &sz);
+						line = line.substr(equal + 1, line.length());
 
-					equal = line.find(',');
-					string latitudeString = line.substr(0,equal);
-					std::string::size_type sz;
-					latitude = std::stod (latitudeString,&sz);
-					cout << latitude << endl;
-					line = line.substr(equal +1 , line.length());
+						equal = line.find(',');
+						string longitudeString = line.substr(0, equal);
+						longitude = std::stod(longitudeString, &sz);
+						line = line.substr(equal + 1, line.length());
 
-					equal = line.find(',');
-					string longitudeString = line.substr(0,equal);
-					longitude = std::stod (longitudeString,&sz);
-					cout << longitude << endl;
-					line = line.substr(equal +1 , line.length());
+						equal = line.find(',');
+						continent = line.substr(0, equal);
+						line = line.substr(equal + 1, line.length());
 
-					equal = line.find(',');
-					continent = line.substr(0,equal);
-					cout << continent << endl;
-					line = line.substr(equal +1 , line.length());
+						vector<string> adjacentTerritories;
 
-					vector<string> adjacentTerritories;
-					Territories Territory = Territories(name, latitude, longitude, continent, adjacentTerritories);
-					cout << Territory.getName() << endl;
-					cout << Territory.getLatitude() << endl;
-					cout << Territory.getLongitude() << endl;
-					cout << Territory.getContinent() << endl;
+						while (line.find(',') != std::string::npos || line.find("\r") != std::string::npos)
+						{
+							if (line.find(',') == std::string::npos)
+							{
+								equal = line.find("\r");
+							}
+							else
+							{
+								equal = line.find(',');
+							}
+							string adjacentTerritory = line.substr(0, equal);
+							line = line.substr(equal + 1, line.length());
+							adjacentTerritories.push_back(adjacentTerritory);
+						}
+
+						Territories Territory = Territories(name, latitude, longitude, continent, adjacentTerritories);
+						for (int i = 0; i < map.Continents.size(); i++) {
+							if (map.Continents[i].getName() == continent)
+							{
+								map.Continents[i].Territories.push_back(Territory);
+							}
+						}
+					}
 				}
 			}
-		  //cout << line << '\n';
 		}
+
 		std::cout << "myvector stores " << int(map.Continents.size()) << " numbers.\n";
-		for(int i = 0; i < map.Continents.size(); i++) {
+		cout << "This is your map :" << map.getImage() << endl;
+		for (int i = 0; i < map.Continents.size(); i++) {
+			cout << "Continent :" << "#" << i + 1 << endl;
 			cout << map.Continents[i].getName() << endl;
+			cout << "These are your territories :" << endl;
+			for (int j = 0; j < map.Continents[i].Territories.size(); j++) {
+				cout << map.Continents[i].Territories[j].getName() << endl;
+			}
 		}
 		myfile.close();
+		return map;
 	}
+	else cout << "Unable to open file";
+}
 
-	else cout << "Unable to open file"; 
+void saveMap(string saveMapName, Map map)
+{
+	ofstream myfile;
+	myfile.open(saveMapName, ios::out | ios::app | ios::binary);
+	myfile << "[Map]" <<endl;
+	myfile << "author=" << map.getAuthor() << endl;
+	myfile << "image=" << map.getImage() << endl;
+	myfile << "wrap=" << map.getWrap() << endl;
+	myfile << "scroll=" << map.getScroll() << endl;
+	myfile << "warn=" << map.getWarn() << endl;
+	myfile << "\r" << endl;
 
-	Continent continent = Continent("America",2);
-	//cout << continent.getName();
+	//CONTINENTS
+	myfile << "[Continents]" << endl;
+	for (int i = 0; i < map.Continents.size(); i++) {
+		myfile << map.Continents[i].getName() << "=" << map.Continents[i].getUnit() << endl;
+	}
+	myfile << "\r" << endl;
 
-	/*getline(fileReader, mapLine);
-    std::string::size_type equal = mapLine.find('=');
-    map.author = mapLine.substr(equal + 1, mapLine.length());
-    cout << map.author << endl;*/
+
+	//TERRITORIES
+	myfile << "[Territories]" << endl;
+	for (int i = 0; i < map.Continents.size(); i++) {
+		for (int j = 0; j < map.Continents[i].Territories.size(); j++) {
+			myfile << map.Continents[i].Territories[j].getName() << "," << map.Continents[i].Territories[j].getLatitude() << "," << map.Continents[i].Territories[j].getLongitude() << "," << map.Continents[i].getName();
+			for (int k = 0; k < map.Continents[i].Territories[j].adjacentTerritories.size(); k++) {
+				myfile << ",";
+				myfile << map.Continents[i].Territories[j].adjacentTerritories[k];
+			}
+			myfile << "\r" << endl;
+		}
+		myfile << "\r" << endl;
+	}
+	myfile << "\r" << endl;
+
+	myfile.close();
+}
+
+void main()
+{
+	string loadMapName;
+	string saveMapName;
+
+	cout << "Enter the name of the map file you want to load" << endl;
+	cin >> loadMapName;
+	Map map = readMap(loadMapName);
+
+	cout << "Enter the name of the map file you want to save it to" << endl;
+	cin >> saveMapName;
+	saveMap(saveMapName, map);
 
 	int j;
 	cin >> j;

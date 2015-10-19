@@ -1,0 +1,16 @@
+[Map]
+author=Sean O'Connor
+image=world.bmp
+wrap=0
+scroll=horizontal
+warn=1
+
+[Continents]
+North America=5
+South America=2
+Africa=3
+Europe=5
+Asia=7
+Australia=2
+
+Alaska,70,126,,Northwest Territory,Alberta,KamchatkaNorthwest Territory,148,127,,Alaska,Alberta,Ontario,GreenlandAlberta,147,163,,Alaska,Northwest Territory,Ontario,Western United StatesGreenland,324,76,,Northwest Territory,Ontario,Quebec,IcelandOntario,199,167,,Northwest Territory,Alberta,Greenland,Quebec,Western United States,Eastern United StatesQuebec,253,166,,Greenland,Ontario,Eastern United StatesVenezuala,259,303,,Central America,Peru,BrazilPeru,262,349,,Venezuala,Brazil,ArgentinaArgentina,263,407,,Peru,BrazilBrazil,308,337,,Venezuala,Peru,Argentina,North Africa

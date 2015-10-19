@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include "Territories.h"
 using namespace std;
 
 class Continent
@@ -12,6 +13,7 @@ public:
 	void setName(string);
 	int getUnit();
 	void setUnit(int);
+	vector<Territories> Territories;
 private:
 	string name;
 	int unit;
