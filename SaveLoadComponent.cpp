@@ -192,6 +192,8 @@ void main()
 	cin >> saveMapName;
 	saveMap(saveMapName, map);
 
+	cout << "The map has been successfully saved !" << endl;
+
 	int j;
 	cin >> j;
 }
