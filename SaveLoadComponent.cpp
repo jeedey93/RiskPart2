@@ -5,10 +5,11 @@
 #include "Territories.h"
 #include "Map.h"
 #include <sstream>
+#include "SaveLoadComponent.h"
 
 using namespace std;
 
-Map readMap(string mapName){
+Map SaveLoadComponent::readMap(string mapName){
 	string line;
 	ifstream myfile;
 	myfile.open(mapName, ios::out | ios::app | ios::binary);
@@ -125,7 +126,7 @@ Map readMap(string mapName){
 			}
 		}
 
-		std::cout << "myvector stores " << int(map.Continents.size()) << " numbers.\n";
+		/*std::cout << "myvector stores " << int(map.Continents.size()) << " numbers.\n";
 		cout << "This is your map :" << map.getImage() << endl;
 		for (int i = 0; i < map.Continents.size(); i++) {
 			cout << "Continent :" << "#" << i + 1 << endl;
@@ -134,23 +135,23 @@ Map readMap(string mapName){
 			for (int j = 0; j < map.Continents[i].Territories.size(); j++) {
 				cout << map.Continents[i].Territories[j].getName() << endl;
 			}
-		}
+		}*/
 		myfile.close();
 		return map;
 	}
 	else cout << "Unable to open file";
 }
 
-void saveMap(string saveMapName, Map map)
+void SaveLoadComponent::saveMap(string saveMapName, Map map)
 {
 	ofstream myfile;
 	myfile.open(saveMapName, ios::out | ios::app | ios::binary);
 	myfile << "[Map]" <<endl;
 	myfile << "author=" << map.getAuthor() << endl;
 	myfile << "image=" << map.getImage() << endl;
-	myfile << "wrap=" << map.getWrap() << endl;
+	myfile << "wrap=" << (map.getWrap()==true?"yes":"no") << endl;
 	myfile << "scroll=" << map.getScroll() << endl;
-	myfile << "warn=" << map.getWarn() << endl;
+	myfile << "warn=" << (map.getWarn() == true ? "yes" : "no") << endl;
 	myfile << "\r" << endl;
 
 	//CONTINENTS
@@ -179,21 +180,3 @@ void saveMap(string saveMapName, Map map)
 	myfile.close();
 }
 
-void main()
-{
-	string loadMapName;
-	string saveMapName;
-
-	cout << "Enter the name of the map file you want to load" << endl;
-	cin >> loadMapName;
-	Map map = readMap(loadMapName);
-
-	cout << "Enter the name of the map file you want to save it to" << endl;
-	cin >> saveMapName;
-	saveMap(saveMapName, map);
-
-	cout << "The map has been successfully saved !" << endl;
-
-	int j;
-	cin >> j;
-}

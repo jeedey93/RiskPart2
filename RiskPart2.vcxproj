@@ -12,13 +12,17 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Continent.cpp" />
+    <ClCompile Include="Driver.cpp" />
     <ClCompile Include="Map.cpp" />
+    <ClCompile Include="MapEditorComponent.cpp" />
     <ClCompile Include="SaveLoadComponent.cpp" />
     <ClCompile Include="Territories.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Continent.h" />
     <ClInclude Include="Map.h" />
+    <ClInclude Include="MapEditorComponent.h" />
+    <ClInclude Include="SaveLoadComponent.h" />
     <ClInclude Include="Territories.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
