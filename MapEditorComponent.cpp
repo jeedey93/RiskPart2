@@ -23,16 +23,16 @@ Map MapEditorComponent::createMap(){
 	cout << "What is the image's extension?" << endl;
 	cin >> image;
 
-	cout << "Is the map wrap?" << endl;
+	cout << "Is the map wrap?[Y/N]" << endl;
 	cin >> wrap;
 
-	cout << "Is the map vertical or horizontal?" << endl;
+	cout << "Is the map vertical or horizontal?[Y/H]" << endl;
 	cin >> scroll;
 
-	cout << "Is the map warn?" << endl;
+	cout << "Is the map warn?[Y/N]" << endl;
 	cin >> warn;
 
-	map = Map(author, image, wrap=="yes"?true:false, scroll, warn=="yes"?true:false);
+	map = Map(author, image, wrap=="Y"?true:false, scroll, warn=="Y"?true:false);
 	return map;
 }
 
@@ -164,8 +164,9 @@ Map MapEditorComponent::EditTerritories(Map map){
 			cin >> modification;
 
 			if (modification != "skip"){
-				
-				map.Continents[i].Territories[stoi(updateTerritoryNumber) - 1].setLongitude(stoi(modification));
+				if (modification != map.Continents[i].Territories[stoi(updateTerritoryNumber) - 1].getContinent()){
+					map.Continents[i].Territories[stoi(updateTerritoryNumber) - 1].setContinent(modification);
+				}
 			}
 
 			else if (modification == "skip")
