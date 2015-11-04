@@ -7,8 +7,9 @@ using namespace std;
 class MapEditorComponent
 {
 public:
-	static Map createMap();
-	static Map addContinentAndTerritories(Map, string, int);
+	static Map CreateMap();
+	static Map AddContinentAndTerritories(Map, string, int);
+	static Map AddTerritory(Map);
 	static Map EditMap(Map);
 	static Map EditContinents(Map);
 	static Map EditTerritories(Map);

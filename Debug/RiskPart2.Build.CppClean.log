@@ -1,17 +1,21 @@
-c:\users\justin do\documents\visual studio 2012\projects\riskpart2\riskpart2\debug\vc110.pdb
-c:\users\justin do\documents\visual studio 2012\projects\riskpart2\riskpart2\debug\gamedriver.obj
-c:\users\justin do\documents\visual studio 2012\projects\riskpart2\riskpart2\debug\saveloadcomponent.obj
-c:\users\justin do\documents\visual studio 2012\projects\riskpart2\riskpart2\debug\territories.obj
-c:\users\justin do\documents\visual studio 2012\projects\riskpart2\riskpart2\debug\continent.obj
-c:\users\justin do\documents\visual studio 2012\projects\riskpart2\riskpart2\debug\map.obj
-c:\users\justin do\documents\visual studio 2012\projects\riskpart2\debug\riskpart2.ilk
-c:\users\justin do\documents\visual studio 2012\projects\riskpart2\debug\riskpart2.exe
-c:\users\justin do\documents\visual studio 2012\projects\riskpart2\debug\riskpart2.pdb
+c:\users\justin do\documents\github\riskpart2\debug\continent.obj
+c:\users\justin do\documents\github\riskpart2\debug\driver.obj
+c:\users\justin do\documents\github\riskpart2\debug\map.obj
+c:\users\justin do\documents\github\riskpart2\debug\mapeditorcomponent.obj
+c:\users\justin do\documents\github\riskpart2\debug\saveloadcomponent.obj
+c:\users\justin do\documents\github\riskpart2\debug\territories.obj
+c:\users\justin do\documents\github\riskpart2\debug\vc110.pdb
+c:\users\justin do\documents\github\riskpart2\debug\riskpart2.ilk
+c:\users\justin do\documents\github\riskpart2\debug\riskpart2.exe
+c:\users\justin do\documents\github\riskpart2\debug\riskpart2.pdb
+c:\users\justin\documents\github\riskpart2\debug\vc120.pdb
+c:\users\justin\documents\github\riskpart2\debug\vc120.idb
 c:\users\justin\documents\github\riskpart2\debug\continent.obj
-c:\users\justin\documents\github\riskpart2\debug\gamedriver.obj
 c:\users\justin\documents\github\riskpart2\debug\map.obj
 c:\users\justin\documents\github\riskpart2\debug\saveloadcomponent.obj
 c:\users\justin\documents\github\riskpart2\debug\territories.obj
+c:\users\justin\documents\github\riskpart2\debug\mapeditorcomponent.obj
+c:\users\justin\documents\github\riskpart2\debug\driver.obj
 c:\users\justin\documents\github\riskpart2\debug\cl.command.1.tlog
 c:\users\justin\documents\github\riskpart2\debug\cl.read.1.tlog
 c:\users\justin\documents\github\riskpart2\debug\cl.write.1.tlog
@@ -19,128 +23,25 @@ c:\users\justin\documents\github\riskpart2\debug\link-cvtres.read.1.tlog
 c:\users\justin\documents\github\riskpart2\debug\link-cvtres.write.1.tlog
 c:\users\justin\documents\github\riskpart2\debug\link-rc.read.1.tlog
 c:\users\justin\documents\github\riskpart2\debug\link-rc.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.10060-cvtres.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.10060-cvtres.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.10060-rc.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.10060-rc.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.10060.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.10060.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.10460-cvtres.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.10460-cvtres.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.10460-rc.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.10460-rc.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.10460.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.10460.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.10700-cvtres.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.10700-cvtres.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.10700-rc.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.10700-rc.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.10700.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.10700.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.12144-cvtres.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.12144-cvtres.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.12144-rc.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.12144-rc.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.12144.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.12144.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.13304-cvtres.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.13304-cvtres.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.13304-rc.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.13304-rc.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.13304.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.13304.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.13360-cvtres.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.13360-cvtres.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.13360-rc.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.13360-rc.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.13360.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.13360.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.13472-cvtres.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.13472-cvtres.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.13472-rc.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.13472-rc.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.13472.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.13472.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.14352-cvtres.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.14352-cvtres.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.14352-rc.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.14352-rc.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.14352.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.14352.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.14484-cvtres.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.14484-cvtres.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.14484-rc.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.14484-rc.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.14484.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.14484.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.14684-cvtres.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.14684-cvtres.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.14684-rc.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.14684-rc.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.14684.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.14684.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.15312-cvtres.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.15312-cvtres.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.15312-rc.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.15312-rc.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.15312.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.15312.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.15528-cvtres.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.15528-cvtres.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.15528-rc.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.15528-rc.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.15528.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.15528.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.15748-cvtres.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.15748-cvtres.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.15748-rc.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.15748-rc.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.15748.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.15748.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.16284-cvtres.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.16284-cvtres.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.16284-rc.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.16284-rc.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.16284.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.16284.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.3304-cvtres.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.3304-cvtres.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.3304-rc.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.3304-rc.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.3304.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.3304.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.4604-cvtres.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.4604-cvtres.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.4604-rc.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.4604-rc.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.4604.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.4604.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.5844-cvtres.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.5844-cvtres.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.5844-rc.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.5844-rc.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.5844.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.5844.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.6876-cvtres.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.6876-cvtres.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.6876-rc.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.6876-rc.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.6876.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.6876.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.7608-cvtres.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.7608-cvtres.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.7608-rc.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.7608-rc.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.7608.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.7608.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.9528-cvtres.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.9528-cvtres.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.9528-rc.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.9528-rc.write.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.9528.read.1.tlog
-c:\users\justin\documents\github\riskpart2\debug\link.9528.write.1.tlog
+c:\users\justin\documents\github\riskpart2\debug\link.9864-cvtres.read.1.tlog
+c:\users\justin\documents\github\riskpart2\debug\link.9864-cvtres.write.1.tlog
+c:\users\justin\documents\github\riskpart2\debug\link.9864-rc.read.1.tlog
+c:\users\justin\documents\github\riskpart2\debug\link.9864-rc.write.1.tlog
+c:\users\justin\documents\github\riskpart2\debug\link.9864.read.1.tlog
+c:\users\justin\documents\github\riskpart2\debug\link.9864.write.1.tlog
 c:\users\justin\documents\github\riskpart2\debug\link.command.1.tlog
 c:\users\justin\documents\github\riskpart2\debug\link.read.1.tlog
 c:\users\justin\documents\github\riskpart2\debug\link.write.1.tlog
 c:\users\justin\documents\github\riskpart2\debug\vc110.idb
+c:\users\justin\documents\github\riskpart2\debug\riskpart2.pdb
 c:\users\justin\documents\github\riskpart2\debug\vc110.pdb
+c:\users\justin\documents\github\riskpart2\debug\riskpart2.tlog\cl.command.1.tlog
+c:\users\justin\documents\github\riskpart2\debug\riskpart2.tlog\cl.read.1.tlog
+c:\users\justin\documents\github\riskpart2\debug\riskpart2.tlog\cl.write.1.tlog
+c:\users\justin\documents\github\riskpart2\debug\riskpart2.tlog\link-cvtres.read.1.tlog
+c:\users\justin\documents\github\riskpart2\debug\riskpart2.tlog\link-cvtres.write.1.tlog
+c:\users\justin\documents\github\riskpart2\debug\riskpart2.tlog\link-rc.read.1.tlog
+c:\users\justin\documents\github\riskpart2\debug\riskpart2.tlog\link-rc.write.1.tlog
+c:\users\justin\documents\github\riskpart2\debug\riskpart2.tlog\link.command.1.tlog
+c:\users\justin\documents\github\riskpart2\debug\riskpart2.tlog\link.read.1.tlog
+c:\users\justin\documents\github\riskpart2\debug\riskpart2.tlog\link.write.1.tlog

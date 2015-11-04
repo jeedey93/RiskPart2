@@ -9,7 +9,7 @@
 
 using namespace std;
 
-Map MapEditorComponent::createMap(){
+Map MapEditorComponent::CreateMap(){
 	string author;
 	string image;
 	string wrap;
@@ -37,46 +37,65 @@ Map MapEditorComponent::createMap(){
 }
 
 Map MapEditorComponent::EditMap(Map map){
-	string modification;
+	string modification="";
+	while (modification != "0"){
+		cout << "What would you like to edit ?[1,2,3,4,5] 0 to exit" << endl;
+		cout << "1 - Author's Name " << endl;
+		cout << "2 - Image's Filename " << endl;
+		cout << "3 - Map's Wrap " << endl;
+		cout << "4 - Map's Scroll " << endl;
+		cout << "5 - Map's Warn " << endl;
+		cout << "0 - Exit" << endl;
+		cin >> modification;
 
-	cout << "This is the author's name:" << map.getAuthor() << endl;
-	cout << "Input a new author's name or skip" << endl;
-	cin >> modification;
+		if (modification == "1"){
+			cout << "This is the author's name:" << map.getAuthor() << endl;
+			cout << "Input a new author's name or skip" << endl;
+			cin >> modification;
 
-	if (modification != "skip"){
-		map.setAuthor(modification);
-	}
+			if (modification != "skip"){
+				map.setAuthor(modification);
+			}
+		}
+		else if (modification == "2"){
+			cout << "This is the image's filename:" << map.getImage() << endl;
+			cout << "Input a new image's filename or skip" << endl;
+			cin >> modification;
 
-	cout << "This is the image's filename:" << map.getImage() << endl;
-	cout << "Input a new image's filename or skip" << endl;
-	cin >> modification;
+			if (modification != "skip"){
+				map.setImage(modification);
+			}
+		}
+		else if (modification == "3"){
+			cout << "This is the map's wrap:" << map.getWrap() << endl;
+			cout << "Input a new map's wrap or skip" << endl;
+			cin >> modification;
 
-	if (modification != "skip"){
-		map.setImage(modification);
-	}
+			if (modification != "skip"){
+				map.setWrap(modification == "true" ? true : false);
+			}
+		}
+		else if (modification == "4"){
+			cout << "This is the map's scroll:" << map.getScroll() << endl;
+			cout << "Input a new map's scroll or skip" << endl;
+			cin >> modification;
 
-	cout << "This is the map's wrap:" << map.getWrap() << endl;
-	cout << "Input a new map's wrap or skip" << endl;
-	cin >> modification;
+			if (modification != "skip"){
+				map.setScroll(modification);
+			}
+		}
+		else if (modification == "5"){
+			cout << "This is the map's warn:" << map.getWarn() << endl;
+			cout << "Input a new map's warn or skip" << endl;
+			cin >> modification;
 
-	if (modification != "skip"){
-		map.setWrap(modification=="true"?true:false);
-	}
-
-	cout << "This is the map's scroll:" << map.getScroll() << endl;
-	cout << "Input a new map's scroll or skip" << endl;
-	cin >> modification;
-
-	if (modification != "skip"){
-		map.setScroll(modification);
-	}
-
-	cout << "This is the map's warn:" << map.getWarn() << endl;
-	cout << "Input a new map's warn or skip" << endl;
-	cin >> modification;
-
-	if (modification != "skip"){
-		map.setWarn(modification == "true" ? true : false);
+			if (modification != "skip"){
+				map.setWarn(modification == "true" ? true : false);
+			}
+		}
+		else{
+			break;
+		}
 	}
 	return map;
 }
@@ -90,22 +109,34 @@ Map MapEditorComponent::EditContinents(Map map){
 	}
 	cin >> updateContinentNumber;
 	while (updateContinentNumber != "exit"){
-		string modification;
+		string modification = "";
+		while (modification != "0"){
+			cout << "What would you like to edit ?[1,2] 0 to exit" << endl;
+			cout << "1 - Continent's Name " << endl;
+			cout << "2 - Continent's Maximum Number of Units " << endl;
+			cout << "0 - Exit" << endl;
+			cin >> modification;
+			if (modification == "1"){
+				cout << "This is the continents's name:" << map.Continents[stoi(updateContinentNumber) - 1].getName() << endl;
+				cout << "Input a new continents's name or skip" << endl;
+				cin >> modification;
 
-		cout << "This is the continents's name:" << map.Continents[stoi(updateContinentNumber) - 1].getName() << endl;
-		cout << "Input a new continents's name or skip" << endl;
-		cin >> modification;
+				if (modification != "skip"){
+					map.Continents[stoi(updateContinentNumber) - 1].setName(modification);
+				}
+			}
+			else if (modification == "2"){
+				cout << "This is the continents's maximum number of units:" << map.Continents[stoi(updateContinentNumber) - 1].getUnit() << endl;
+				cout << "Input a new continents's maximum number of units or skip" << endl;
+				cin >> modification;
 
-		if (modification != "skip"){
-			map.Continents[stoi(updateContinentNumber) - 1].setName(modification);
-		}
-
-		cout << "This is the continents's maximum number of units:" << map.Continents[stoi(updateContinentNumber) - 1].getUnit() << endl;
-		cout << "Input a new continents's maximum number of units or skip" << endl;
-		cin >> modification;
-
-		if (modification != "skip"){
-			map.Continents[stoi(updateContinentNumber) - 1].setUnit(stoi(modification));
+				if (modification != "skip"){
+					map.Continents[stoi(updateContinentNumber) - 1].setUnit(stoi(modification));
+				}
+			}
+			else{
+				break;
+			}
 		}
 
 		cout << "Which continents would you like to edit ? Type exit otherwise" << endl;
@@ -135,12 +166,13 @@ Map MapEditorComponent::EditTerritories(Map map){
 		while (updateTerritoryNumber != "next"){
 			string modification;
 
-			cout << "What would you like to edit ?[1,2,3,4,5] Skip to exit" <<  endl;
+			cout << "What would you like to edit ?[1,2,3,4,5] 0 to exit" <<  endl;
 			cout << "1 - Name " << endl;
 			cout << "2 - Latitude " << endl;
 			cout << "3 - Longitude " << endl;
 			cout << "4 - Continent " << endl;
 			cout << "5 - Adjacent Territories " << endl;
+			cout << "0 - Exit" << endl;
 			cin >> modification;
 
 			if(modification == "1"){
@@ -180,11 +212,14 @@ Map MapEditorComponent::EditTerritories(Map map){
 						map.Continents[i].Territories[stoi(updateTerritoryNumber) - 1].setContinent(modification);
 					}
 				}
-				else if(modification == "5"){
-				}
-				else if(modification == "skip"){
-					updateTerritoryNumber = "next";
-				}
+			}
+			else if (modification == "5"){
+			}
+			else if (modification == "0"){
+				updateTerritoryNumber = "next";
+			}
+			else{ 
+				break; 
 			}
 			/*	cout << "This is the territory's name:" << map.Continents[i].Territories[stoi(updateTerritoryNumber) - 1].getName() << endl;
 			cout << "Input a new territory's name or skip" << endl;
@@ -228,7 +263,41 @@ Map MapEditorComponent::EditTerritories(Map map){
 	return map;
 }
 
-Map MapEditorComponent::addContinentAndTerritories(Map map, string continentName, int continentUnitCount){
+Map MapEditorComponent::AddTerritory(Map map){
+	string addTerritory;
+	string territoryName;
+	double latitude;
+	double longitude;
+	int territoryCount = 1;
+	string adjacentTerritory;
+	string continentName;
+
+	cout << "Name your territory #" << territoryCount << endl;
+	cin >> territoryName;
+	cout << "Please specify the latitude of " << territoryName << endl;
+	cin >> latitude;
+	cout << "Please specify the longitude of " << territoryName << endl;
+	cin >> longitude;
+	vector<string> adjacentTerritories;
+	cout << "Please enter an adjacent territory or stop" << endl;
+	cin >> adjacentTerritory;
+	while (adjacentTerritory != "stop"){
+		adjacentTerritories.push_back(adjacentTerritory);
+		cout << "Please enter an adjacent territory or stop" << endl;
+		cin >> adjacentTerritory;
+	}
+	cout << "Which continent do you want your territory to be added to?" << endl;
+	cin >> continentName;
+	Territories territory = Territories(territoryName, latitude, longitude, continentName, adjacentTerritories);
+	for (int i = 0; i < map.Continents.size(); i++){
+		if (map.Continents[i].getName() == continentName){
+			map.Continents[i].Territories.push_back(territory);
+		}
+	}
+	return map;
+}
+
+Map MapEditorComponent::AddContinentAndTerritories(Map map, string continentName, int continentUnitCount){
 	string addTerritory;
 	string territoryName;
 	double latitude;

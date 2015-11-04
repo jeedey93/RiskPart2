@@ -25,7 +25,7 @@ int main(){
 	int continentUnitCount;
 	int continentCount = 1;
 	bool boolCreateOrLoad = true;
-	int componentEdit;
+	int componentEdit=10;
 	Map map;
 
 	while (boolCreateOrLoad){
@@ -33,7 +33,7 @@ int main(){
 		cin >> createOrLoad;
 
 		if (createOrLoad == "create"){
-			map = MapEditorComponent::createMap();
+			map = MapEditorComponent::CreateMap();
 			cout << "Do you want to add a continent?" << endl;
 			cin >> addContinent;
 			while (addContinent == "yes"){
@@ -42,7 +42,7 @@ int main(){
 				cout << "How many units can be contained in " << continentName << " ?" << endl;
 				cin >> continentUnitCount;
 				continentCount++;
-				map = MapEditorComponent::addContinentAndTerritories(map, continentName, continentUnitCount);
+				map = MapEditorComponent::AddContinentAndTerritories(map, continentName, continentUnitCount);
 				cout << "Do you want to add a continent?" << endl;
 				cin >> addContinent;
 			}
@@ -53,13 +53,17 @@ int main(){
 			cout << "Enter the name of the map file you want to load" << endl;
 			cin >> loadMapName;
 			Map map = SaveLoadComponent::readMap(loadMapName);
-
-			cout << "What component would you like to edit ?" << endl;
-			cout << "1 - Map" << endl;
-			cout << "2 - Continents" << endl;
-			cout << "3 - Territories" << endl;
-			cin >> componentEdit;
-			switch (componentEdit){
+			while (componentEdit != 0){
+				cout << "What component would you like to edit ?" << endl;
+				cout << "1 - Map" << endl;
+				cout << "2 - Continents" << endl;
+				cout << "3 - Territories" << endl;
+				cout << "4 - Add a Continent" << endl;
+				cout << "5 - Add a Territory" << endl;
+				cout << "6 - Define adjency relationships between countries" << endl;
+				cout << "0 - Exit" << endl;
+				cin >> componentEdit;
+				switch (componentEdit){
 				case 1:
 					map = MapEditorComponent::EditMap(map);
 					break;
@@ -69,8 +73,22 @@ int main(){
 				case 3:
 					map = MapEditorComponent::EditTerritories(map);
 					break;
+				case 4:
+					cout << "Name your continent #" << continentCount << endl;
+					cin >> continentName;
+					cout << "How many units can be contained in " << continentName << " ?" << endl;
+					cin >> continentUnitCount;
+					map = MapEditorComponent::AddContinentAndTerritories(map, continentName, continentCount);
+					break;
+				case 5:
+					map = MapEditorComponent::AddTerritory(map);
+					break;
+				case 6:
+					//
+					break;
 				default:
 					break;
+				}
 			}
 			cout << "Process of editing the map has finished" << endl;
 			cout << "Enter the name of the map file you want to save it to" << endl;
