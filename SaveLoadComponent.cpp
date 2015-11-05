@@ -146,24 +146,24 @@ void SaveLoadComponent::saveMap(string saveMapName, Map map)
 {
 	ofstream myfile;
 	myfile.open(saveMapName, ios::out | ios::app | ios::binary);
-	myfile << "[Map]" <<endl;
-	myfile << "author=" << map.getAuthor() << endl;
-	myfile << "image=" << map.getImage() << endl;
-	myfile << "wrap=" << (map.getWrap()==true?"yes":"no") << endl;
-	myfile << "scroll=" << map.getScroll() << endl;
-	myfile << "warn=" << (map.getWarn() == true ? "yes" : "no") << endl;
+	myfile << "[Map]" << "\r" <<endl;
+	myfile << "author=" << map.getAuthor() << "\r"<< endl;
+	myfile << "image=" << map.getImage() << "\r"<< endl;
+	myfile << "wrap=" << (map.getWrap()==true?"yes":"no")<< "\r" << endl;
+	myfile << "scroll=" << map.getScroll() << "\r"<< endl;
+	myfile << "warn=" << (map.getWarn() == true ? "yes" : "no") << "\r"<< endl;
 	myfile << "\r" << endl;
 
 	//CONTINENTS
-	myfile << "[Continents]" << endl;
+	myfile << "[Continents]" << "\r"<< endl;
 	for (int i = 0; i < map.Continents.size(); i++) {
-		myfile << map.Continents[i].getName() << "=" << map.Continents[i].getUnit() << endl;
+		myfile << map.Continents[i].getName() << "=" << map.Continents[i].getUnit() << "\r" << endl;
 	}
 	myfile << "\r" << endl;
 
 
 	//TERRITORIES
-	myfile << "[Territories]" << endl;
+	myfile << "[Territories]" << "\r"<< endl;
 	for (int i = 0; i < map.Continents.size(); i++) {
 		for (int j = 0; j < map.Continents[i].Territories.size(); j++) {
 			myfile << map.Continents[i].Territories[j].getName() << "," << map.Continents[i].Territories[j].getLatitude() << "," << map.Continents[i].Territories[j].getLongitude() << "," << map.Continents[i].getName();

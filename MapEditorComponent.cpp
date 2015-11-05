@@ -214,6 +214,26 @@ Map MapEditorComponent::EditTerritories(Map map){
 				}
 			}
 			else if (modification == "5"){
+				cout << "This is the territory's adjacent countries:" << endl;
+				for(int i=0;i< map.Continents[i].Territories[stoi(updateTerritoryNumber) - 1].adjacentTerritories.size();i++){
+					cout << i+1 << "-" << map.Continents[i].Territories[stoi(updateTerritoryNumber) - 1].adjacentTerritories[i] << endl;
+				}
+				cout << "Do you want to add or remove adjacent country?" << endl;
+				cin >> modification; 
+				if(modification == "add"){
+					cout << "Type the name of adjacent country you want to add" << endl;
+					cin >> modification; 
+					map.Continents[i].Territories[stoi(updateTerritoryNumber) - 1].adjacentTerritories.push_back(modification);
+				}
+				else if(modification=="remove"){
+					cout << "Type the name of adjacent country you want to remove" << endl;
+					cin >> modification; 
+					for(int i=0;i< map.Continents[i].Territories[stoi(updateTerritoryNumber) - 1].adjacentTerritories.size();i++){
+						if(map.Continents[i].Territories[stoi(updateTerritoryNumber) - 1].adjacentTerritories[i] == modification){
+							map.Continents[i].Territories[stoi(updateTerritoryNumber) - 1].adjacentTerritories.pop_back();
+						}
+					}
+				}
 			}
 			else if (modification == "0"){
 				updateTerritoryNumber = "next";
