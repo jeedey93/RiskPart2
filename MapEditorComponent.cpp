@@ -221,43 +221,6 @@ Map MapEditorComponent::EditTerritories(Map map){
 			else{ 
 				break; 
 			}
-			/*	cout << "This is the territory's name:" << map.Continents[i].Territories[stoi(updateTerritoryNumber) - 1].getName() << endl;
-			cout << "Input a new territory's name or skip" << endl;
-			cin >> modification;
-
-			if (modification != "skip"){
-			map.Continents[i].Territories[stoi(updateTerritoryNumber) - 1].setName(modification);
-			}
-
-			cout << "This is the territory's latitude:" << map.Continents[i].Territories[stoi(updateTerritoryNumber) - 1].getLatitude() << endl;
-			cout << "Input a new territory's latitude or skip" << endl;
-			cin >> modification;
-
-			if (modification != "skip"){
-			map.Continents[i].Territories[stoi(updateTerritoryNumber) - 1].setLatitude(stoi(modification));
-			}
-
-			cout << "This is the territory's longitude:" << map.Continents[i].Territories[stoi(updateTerritoryNumber) - 1].getLongitude() << endl;
-			cout << "Input a new territory's longitude or skip" << endl;
-			cin >> modification;
-
-			if (modification != "skip"){
-			map.Continents[i].Territories[stoi(updateTerritoryNumber) - 1].setLongitude(stoi(modification));
-			}
-
-			cout << "This is the territory's continent:" << map.Continents[i].Territories[stoi(updateTerritoryNumber) - 1].getContinent() << endl;
-			cout << "Input a new territory's continent or skip" << endl;
-			cin >> modification;
-
-			if (modification != "skip"){
-			if (modification != map.Continents[i].Territories[stoi(updateTerritoryNumber) - 1].getContinent()){
-			map.Continents[i].Territories[stoi(updateTerritoryNumber) - 1].setContinent(modification);
-			}
-			}
-
-			else if (modification == "skip")
-			updateTerritoryNumber = "next";
-			updateTerritoryNumber = "next";*/
 		}
 	}
 	return map;
