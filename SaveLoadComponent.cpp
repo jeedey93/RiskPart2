@@ -125,17 +125,6 @@ Map SaveLoadComponent::readMap(string mapName){
 				}
 			}
 		}
-
-		/*std::cout << "myvector stores " << int(map.Continents.size()) << " numbers.\n";
-		cout << "This is your map :" << map.getImage() << endl;
-		for (int i = 0; i < map.Continents.size(); i++) {
-			cout << "Continent :" << "#" << i + 1 << endl;
-			cout << map.Continents[i].getName() << endl;
-			cout << "These are your territories :" << endl;
-			for (int j = 0; j < map.Continents[i].Territories.size(); j++) {
-				cout << map.Continents[i].Territories[j].getName() << endl;
-			}
-		}*/
 		myfile.close();
 		return map;
 	}
@@ -168,8 +157,10 @@ void SaveLoadComponent::saveMap(string saveMapName, Map map)
 		for (int j = 0; j < map.Continents[i].Territories.size(); j++) {
 			myfile << map.Continents[i].Territories[j].getName() << "," << map.Continents[i].Territories[j].getLatitude() << "," << map.Continents[i].Territories[j].getLongitude() << "," << map.Continents[i].getName();
 			for (int k = 0; k < map.Continents[i].Territories[j].adjacentTerritories.size(); k++) {
-				myfile << ",";
-				myfile << map.Continents[i].Territories[j].adjacentTerritories[k];
+				if (map.Continents[i].Territories[j].adjacentTerritories[k] != ""){
+					myfile << ",";
+					myfile << map.Continents[i].Territories[j].adjacentTerritories[k];
+				}
 			}
 			myfile << "\r" << endl;
 		}

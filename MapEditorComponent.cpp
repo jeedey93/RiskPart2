@@ -215,8 +215,8 @@ Map MapEditorComponent::EditTerritories(Map map){
 			}
 			else if (modification == "5"){
 				cout << "This is the territory's adjacent countries:" << endl;
-				for(int i=0;i< map.Continents[i].Territories[stoi(updateTerritoryNumber) - 1].adjacentTerritories.size();i++){
-					cout << i+1 << "-" << map.Continents[i].Territories[stoi(updateTerritoryNumber) - 1].adjacentTerritories[i] << endl;
+				for(int k=0;k< map.Continents[i].Territories[stoi(updateTerritoryNumber) - 1].adjacentTerritories.size();k++){
+					cout << k+1 << "-" << map.Continents[i].Territories[stoi(updateTerritoryNumber) - 1].adjacentTerritories[k] << endl;
 				}
 				cout << "Do you want to add or remove adjacent country?" << endl;
 				cin >> modification; 
@@ -228,9 +228,9 @@ Map MapEditorComponent::EditTerritories(Map map){
 				else if(modification=="remove"){
 					cout << "Type the name of adjacent country you want to remove" << endl;
 					cin >> modification; 
-					for(int i=0;i< map.Continents[i].Territories[stoi(updateTerritoryNumber) - 1].adjacentTerritories.size();i++){
-						if(map.Continents[i].Territories[stoi(updateTerritoryNumber) - 1].adjacentTerritories[i] == modification){
-							map.Continents[i].Territories[stoi(updateTerritoryNumber) - 1].adjacentTerritories.pop_back();
+					for(int a=0;a< map.Continents[i].Territories[stoi(updateTerritoryNumber) - 1].adjacentTerritories.size();a++){
+						if(map.Continents[i].Territories[stoi(updateTerritoryNumber) - 1].adjacentTerritories[a] == modification){
+							map.Continents[i].Territories[stoi(updateTerritoryNumber) - 1].adjacentTerritories[a].erase();
 						}
 					}
 				}
@@ -244,6 +244,38 @@ Map MapEditorComponent::EditTerritories(Map map){
 		}
 	}
 	return map;
+}
+
+bool MapEditorComponent::ValidateMap(Map map){
+	bool isValid = true;
+	vector <string> continentNames = vector<string>();
+	for (int i = 0; i < map.Continents.size(); i++){
+		//CHECK CONTINENTS NAMES
+		string continentName = map.Continents[i].getName();
+		for (int j = 0; j < continentNames.size(); j++){
+			if (continentName == continentNames[j]){
+				isValid = false;
+			}
+			else{
+				continentNames.push_back(continentName);
+			}
+		}
+		//CHECK TERRITORIES NAMES
+		for (int k = 0; k < map.Continents[i].Territories.size(); k++){
+			vector <string> territoriesNames = vector<string>();
+			for (int j = 0; j < territoriesNames.size(); j++){
+				string territoryName = map.Continents[i].Territories[k].getName();
+				if (territoryName == territoriesNames[j]){
+					isValid = false;
+				}
+				else{
+					territoriesNames.push_back(territoryName);
+				}
+			}
+		}
+	}
+
+	return isValid;
 }
 
 Map MapEditorComponent::AddTerritory(Map map){

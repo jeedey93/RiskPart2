@@ -13,4 +13,5 @@ public:
 	static Map EditMap(Map);
 	static Map EditContinents(Map);
 	static Map EditTerritories(Map);
+	static bool ValidateMap(Map);
 };

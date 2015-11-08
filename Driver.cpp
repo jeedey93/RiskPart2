@@ -60,7 +60,6 @@ int main(){
 				cout << "3 - Territories" << endl;
 				cout << "4 - Add a Continent" << endl;
 				cout << "5 - Add a Territory" << endl;
-				cout << "6 - Define adjency relationships between countries" << endl;
 				cout << "0 - Exit" << endl;
 				cin >> componentEdit;
 				switch (componentEdit){
@@ -83,9 +82,6 @@ int main(){
 				case 5:
 					map = MapEditorComponent::AddTerritory(map);
 					break;
-				case 6:
-					//
-					break;
 				default:
 					break;
 				}
@@ -93,9 +89,16 @@ int main(){
 			cout << "Process of editing the map has finished" << endl;
 			cout << "Enter the name of the map file you want to save it to" << endl;
 			cin >> saveMapName;
-			SaveLoadComponent::saveMap(saveMapName, map);
-			cout << "The map has been successfully saved !" << endl;
-			boolCreateOrLoad = false;
+			cout << "Checking map validity..." << endl;
+			bool isValid = MapEditorComponent::ValidateMap(map);
+			if (isValid){
+				SaveLoadComponent::saveMap(saveMapName, map);
+				cout << "The map has been successfully saved !" << endl;
+				boolCreateOrLoad = false;
+			}
+			else{
+				cout << "The map is not valid, please fix it" << endl;
+			}
 		}
 	}
 	int j;
