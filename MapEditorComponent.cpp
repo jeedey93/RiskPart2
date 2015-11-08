@@ -17,6 +17,7 @@ Map MapEditorComponent::CreateMap(){
 	string warn;
 	Map map;
 
+	//PROMPTS USER FOR ALL ATTRIBUTES OF MAP
 	cout << "What is the author's name?" << endl;
 	cin >> author;
 
@@ -37,6 +38,7 @@ Map MapEditorComponent::CreateMap(){
 }
 
 Map MapEditorComponent::EditMap(Map map){
+	//PROMPTS USER FOR DIFFERENT STUFF TO EDIT
 	string modification="";
 	while (modification != "0"){
 		cout << "What would you like to edit ?[1,2,3,4,5] 0 to exit" << endl;
@@ -101,6 +103,7 @@ Map MapEditorComponent::EditMap(Map map){
 }
 
 Map MapEditorComponent::EditContinents(Map map){
+	//PROMPS USER TO DECIDE WHICH CONTINENT TO EDIT
 	string updateContinentNumber;
 	cout << "Which continents would you like to edit ? Type exit otherwise" << endl;
 	for (int i = 0; i < map.Continents.size(); i++)
@@ -111,6 +114,7 @@ Map MapEditorComponent::EditContinents(Map map){
 	while (updateContinentNumber != "exit"){
 		string modification = "";
 		while (modification != "0"){
+			//ONCE CONTINENT CHOSEN, THE USER CAN MODIFY ANY FIELDS FROM IT
 			cout << "What would you like to edit ?[1,2] 0 to exit" << endl;
 			cout << "1 - Continent's Name " << endl;
 			cout << "2 - Continent's Maximum Number of Units " << endl;
@@ -138,7 +142,7 @@ Map MapEditorComponent::EditContinents(Map map){
 				break;
 			}
 		}
-
+		//THE SYSTEM WILL KEEP ON GOING UNTIL THE USER TYPES EXIT
 		cout << "Which continents would you like to edit ? Type exit otherwise" << endl;
 		for (int i = 0; i < map.Continents.size(); i++)
 		{
@@ -152,6 +156,7 @@ Map MapEditorComponent::EditContinents(Map map){
 Map MapEditorComponent::EditTerritories(Map map){
 	string updateTerritoryNumber;
 
+	//THE SYSTEM PROMPS THE USER TO DECIDE WHICH TERRITORY HE WOULD LIKE TO EDIT
 	for (int i = 0; i < map.Continents.size(); i++)
 	{
 		cout << "Which territory would you like to edit ? Type next or exit otherwise" << endl;
@@ -164,6 +169,7 @@ Map MapEditorComponent::EditTerritories(Map map){
 			break;
 		}
 		while (updateTerritoryNumber != "next"){
+			//ONCE THE TERRITORY IS CHOSEN, THE USER WILL DECIDE WHICH ATTRIBUTE HE WILL MODIFY
 			string modification;
 
 			cout << "What would you like to edit ?[1,2,3,4,5] 0 to exit" <<  endl;
@@ -218,6 +224,8 @@ Map MapEditorComponent::EditTerritories(Map map){
 				for(int k=0;k< map.Continents[i].Territories[stoi(updateTerritoryNumber) - 1].adjacentTerritories.size();k++){
 					cout << k+1 << "-" << map.Continents[i].Territories[stoi(updateTerritoryNumber) - 1].adjacentTerritories[k] << endl;
 				}
+
+				//ADD AND REMOVE ADJACENT COUNTRIES
 				cout << "Do you want to add or remove adjacent country?" << endl;
 				cin >> modification; 
 				if(modification == "add"){
@@ -280,6 +288,7 @@ Map MapEditorComponent::AddTerritory(Map map){
 	string adjacentTerritory;
 	string continentName;
 
+	//PROMPTS USER FOR EVERY DIFFERENT FIELD WHEN CREATING A TERRITORY
 	cout << "Name your territory #" << territoryCount << endl;
 	cin >> territoryName;
 	cout << "Please specify the latitude of " << territoryName << endl;
@@ -313,6 +322,7 @@ Map MapEditorComponent::AddContinentAndTerritories(Map map, string continentName
 	int territoryCount = 1;
 	string adjacentTerritory;
 
+	//PROMPTS THE USER TO CREATE TERRITORIES IN ADDITION TO HIS CONTINENT
 	Continent continent = Continent(continentName, continentUnitCount);
 	cout << "Do you want to add a territory to " << continentName << " ?" << endl;
 	cin >> addTerritory;

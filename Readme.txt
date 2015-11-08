@@ -1,20 +1,19 @@
 Assignment done by:
 Justin Trong Huan Do #26600514
-Due on Thursday October 29th 2015
+Due on Sunday November 8th 2015
 
-Part 4: Save/Load Map
+Part 3: Interactive Map Editor
 
-This is assignment is about being able to read a .map extension.
-It is composed of 3 parts : [Map], [Continents] and [Territories].
-While there are still lines in the file, the reader iterates throughout all of them
-in order to store the values in a C++ object. After every objects from every line has been created,
-The map will contain a list of all the continents and the continents will contain all the territories. 
-This is the first part consisting of being able to read a map file. 
+This is assignment is about being able to read a .map extension and edit a .map extension.
+Furthermore, the user should be able to create a map from scratch and save it to a .map file extension.
+It is a follow up from assignment#1, where it was save/load maps.
+It is still composed of 3 parts : [Map], [Continents] and [Territories].
 
-Now, all the objects are available and ready to be used by the system and the user. 
+The user starts and has 2 options : Create or Edit a map.
+If he chooses Create, he will be prompted a menu to do all sort of stuff such as Create new countries, create territories, define adjacent territories, and finally save his work.
 
-After the system or user is done with game, he can choose to export all the map information to an external file,
-that will be used in the future. It does not store the game information and states but only the map, the continents
-and the territories that are present in the game. The user can choose the name of the file he wishes to save to.
-Since it was developped as a component, it will be easily incorporated into the main driver. 
+If he chooses Edit, he will be able to load a map file then apply changes to it.
+
+At the end, before saving the map into an external file, the system will validate the map,
+which means it will make sure no continents has the same name and no territories shares the same name.
 
