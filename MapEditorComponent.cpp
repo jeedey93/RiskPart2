@@ -248,33 +248,26 @@ Map MapEditorComponent::EditTerritories(Map map){
 
 bool MapEditorComponent::ValidateMap(Map map){
 	bool isValid = true;
-	vector <string> continentNames = vector<string>();
+
 	for (int i = 0; i < map.Continents.size(); i++){
 		//CHECK CONTINENTS NAMES
 		string continentName = map.Continents[i].getName();
-		for (int j = 0; j < continentNames.size(); j++){
-			if (continentName == continentNames[j]){
+		for (int j = i+1; j < map.Continents.size(); j++){
+			if (map.Continents[j].getName() == continentName){
 				isValid = false;
 			}
-			else{
-				continentNames.push_back(continentName);
-			}
 		}
+		
 		//CHECK TERRITORIES NAMES
 		for (int k = 0; k < map.Continents[i].Territories.size(); k++){
-			vector <string> territoriesNames = vector<string>();
-			for (int j = 0; j < territoriesNames.size(); j++){
-				string territoryName = map.Continents[i].Territories[k].getName();
-				if (territoryName == territoriesNames[j]){
+			string territoryName = map.Continents[i].Territories[k].getName();
+			for (int l = k+1; l < map.Continents[i].Territories.size(); l++){
+				if (territoryName == map.Continents[i].Territories[l].getName()){
 					isValid = false;
-				}
-				else{
-					territoriesNames.push_back(territoryName);
 				}
 			}
 		}
 	}
-
 	return isValid;
 }
 
